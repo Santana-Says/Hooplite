@@ -9,6 +9,7 @@
 /* Begin PBXFileReference section */
 		AD83236D2D22A7B100D004BA /* Hooplite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hooplite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD83237E2D22A85A00D004BA /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Core; path = ../Core; sourceTree = SOURCE_ROOT; };
+		AD83237F2D22AA9300D004BA /* PopularItems */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = PopularItems; path = ../PopularItems; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -33,6 +34,7 @@
 		AD8323642D22A7B100D004BA = {
 			isa = PBXGroup;
 			children = (
+				AD83237F2D22AA9300D004BA /* PopularItems */,
 				AD83237E2D22A85A00D004BA /* Core */,
 				AD83236F2D22A7B100D004BA /* Hooplite */,
 				AD83236E2D22A7B100D004BA /* Products */,
