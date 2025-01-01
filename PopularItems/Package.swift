@@ -8,16 +8,9 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "PopularItemsData",
-            targets: ["PopularItemsData"]),
-        .library(
-            name: "PopularItemsDomain",
-            targets: ["PopularItemsDomain"]),
-        .library(
             name: "PopularItemsPresentation",
             targets: ["PopularItemsPresentation"])
     ],
-    dependencies: [.package(path: "../CoreDomain")],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
@@ -25,10 +18,10 @@ let package = Package(
             name: "PopularItemsData",
             dependencies: ["PopularItemsDomain"]),
         .target(
-            name: "PopularItemsDomain",
-            dependencies: ["CoreDomain"]),
+            name: "PopularItemsDomain"),
         .target(
             name: "PopularItemsPresentation",
             dependencies: ["PopularItemsDomain"])
+
     ]
 )

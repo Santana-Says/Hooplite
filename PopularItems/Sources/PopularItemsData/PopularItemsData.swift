@@ -2,7 +2,7 @@
 //  PopularItemsData.swift
 //  PopularItems
 //
-//  Created by Jeffrey Santana on 12/30/24.
+//  Created by Jeffrey Santana on 1/1/25.
 //
 
 struct PopularItemsData {
