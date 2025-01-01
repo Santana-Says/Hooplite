@@ -6,6 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		ADC185D52D256C6F00D335D7 /* CoreData in Frameworks */ = {isa = PBXBuildFile; productRef = ADC185D42D256C6F00D335D7 /* CoreData */; };
+		ADC185D72D256C6F00D335D7 /* CoreDomain in Frameworks */ = {isa = PBXBuildFile; productRef = ADC185D62D256C6F00D335D7 /* CoreDomain */; };
+		ADC185D92D256C6F00D335D7 /* CorePresentation in Frameworks */ = {isa = PBXBuildFile; productRef = ADC185D82D256C6F00D335D7 /* CorePresentation */; };
+		ADC185DB2D256C6F00D335D7 /* PopularItemsPresentation in Frameworks */ = {isa = PBXBuildFile; productRef = ADC185DA2D256C6F00D335D7 /* PopularItemsPresentation */; };
+		ADC185DD2D256C8500D335D7 /* PopularItemsData in Frameworks */ = {isa = PBXBuildFile; productRef = ADC185DC2D256C8500D335D7 /* PopularItemsData */; };
+		ADC185DF2D256C8500D335D7 /* PopularItemsDomain in Frameworks */ = {isa = PBXBuildFile; productRef = ADC185DE2D256C8500D335D7 /* PopularItemsDomain */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		AD83236D2D22A7B100D004BA /* Hooplite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hooplite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD83237E2D22A85A00D004BA /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Core; path = ../Core; sourceTree = SOURCE_ROOT; };
@@ -25,6 +34,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADC185D52D256C6F00D335D7 /* CoreData in Frameworks */,
+				ADC185DD2D256C8500D335D7 /* PopularItemsData in Frameworks */,
+				ADC185DB2D256C6F00D335D7 /* PopularItemsPresentation in Frameworks */,
+				ADC185DF2D256C8500D335D7 /* PopularItemsDomain in Frameworks */,
+				ADC185D72D256C6F00D335D7 /* CoreDomain in Frameworks */,
+				ADC185D92D256C6F00D335D7 /* CorePresentation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +52,7 @@
 				ADC185D22D24461F00D335D7 /* PopularItems */,
 				AD83237E2D22A85A00D004BA /* Core */,
 				AD83236F2D22A7B100D004BA /* Hooplite */,
+				ADC185D32D256C6F00D335D7 /* Frameworks */,
 				AD83236E2D22A7B100D004BA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +63,13 @@
 				AD83236D2D22A7B100D004BA /* Hooplite.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		ADC185D32D256C6F00D335D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -69,6 +92,12 @@
 			);
 			name = Hooplite;
 			packageProductDependencies = (
+				ADC185D42D256C6F00D335D7 /* CoreData */,
+				ADC185D62D256C6F00D335D7 /* CoreDomain */,
+				ADC185D82D256C6F00D335D7 /* CorePresentation */,
+				ADC185DA2D256C6F00D335D7 /* PopularItemsPresentation */,
+				ADC185DC2D256C8500D335D7 /* PopularItemsData */,
+				ADC185DE2D256C8500D335D7 /* PopularItemsDomain */,
 			);
 			productName = Hooplite;
 			productReference = AD83236D2D22A7B100D004BA /* Hooplite.app */;
@@ -328,6 +357,33 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ADC185D42D256C6F00D335D7 /* CoreData */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreData;
+		};
+		ADC185D62D256C6F00D335D7 /* CoreDomain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreDomain;
+		};
+		ADC185D82D256C6F00D335D7 /* CorePresentation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CorePresentation;
+		};
+		ADC185DA2D256C6F00D335D7 /* PopularItemsPresentation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PopularItemsPresentation;
+		};
+		ADC185DC2D256C8500D335D7 /* PopularItemsData */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PopularItemsData;
+		};
+		ADC185DE2D256C8500D335D7 /* PopularItemsDomain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PopularItemsDomain;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AD8323652D22A7B100D004BA /* Project object */;
 }
