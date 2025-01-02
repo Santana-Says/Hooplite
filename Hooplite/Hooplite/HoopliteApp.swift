@@ -7,6 +7,7 @@
 
 import CoreData
 import PopularItemsData
+import PopularItemsPresentation
 import SwiftUI
 import Swinject
 
@@ -18,7 +19,7 @@ struct HoopliteApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PopularItemsView()
         }
     }
     
@@ -27,5 +28,6 @@ struct HoopliteApp: App {
         
         let _ = CoreDataDependencies(container: sharedContainer)
         let _ = PopularItemsDataDependencies(container: sharedContainer)
+        let _ = PopularItemsPresentationDependencies(container: sharedContainer)
     }
 }

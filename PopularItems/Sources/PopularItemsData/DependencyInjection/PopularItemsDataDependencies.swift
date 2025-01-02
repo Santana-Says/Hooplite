@@ -2,25 +2,21 @@ import CoreDomain
 import PopularItemsDomain
 import Swinject
 
-public class PopularItemsDataDependencies: DependencyDelegate {
-    @MainActor public static let shared = PopularItemsDataDependencies(container: Container())
-    
-    private let container: Container
+public class PopularItemsDataDependencies {
+    nonisolated(unsafe) public static var sharedContainer = Container()
     
     public init(container: Container) {
-        self.container = container
+        PopularItemsDataDependencies.sharedContainer = container
         
         registerDependencies()
     }
     
-    public func registerDependencies () {
-        container.register(GetPopularItemsUseCase.self) { resolver in
+    private func registerDependencies () {
+        let sharedContainer = PopularItemsDataDependencies.sharedContainer
+        
+        sharedContainer.register(GetPopularItemsUseCase.self) { resolver in
             let getJSONDataUseCase = resolver.resolve(GetJSONDataUseCase.self)!
             return GetPopularItemsUseCaseImpl(getJSONDataUseCase: getJSONDataUseCase)
         }
-    }
-    
-    public func resolve<T>(_ serviceType: T.Type) -> T? {
-        container.resolve(serviceType)
     }
 }

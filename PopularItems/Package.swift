@@ -33,6 +33,5 @@ let package = Package(
         .target(
             name: "PopularItemsPresentation",
             dependencies: ["PopularItemsDomain"])
-
     ]
 )

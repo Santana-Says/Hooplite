@@ -1,24 +1,20 @@
 import CoreDomain
 import Swinject
 
-public class CoreDataDependencies: DependencyDelegate {
-    @MainActor public static let shared = CoreDataDependencies(container: Container())
-    
-    private let container: Container
+public class CoreDataDependencies {
+    nonisolated(unsafe) public static var sharedContainer = Container()
     
     public init(container: Container) {
-        self.container = container
+        CoreDataDependencies.sharedContainer = container
         
         registerDependencies()
     }
     
-    public func registerDependencies () {
-        container.register(GetJSONDataUseCase.self) { _ in
+    private func registerDependencies () {
+        let sharedContainer = CoreDataDependencies.sharedContainer
+        
+        sharedContainer.register(GetJSONDataUseCase.self) { _ in
             GetJSONDataUseCaseImpl()
         }
-    }
-    
-    public func resolve<T>(_ serviceType: T.Type) -> T? {
-        container.resolve(serviceType)
     }
 }
