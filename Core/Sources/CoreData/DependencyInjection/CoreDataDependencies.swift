@@ -13,10 +13,6 @@ public class CoreDataDependencies {
     private func registerDependencies () {
         let sharedContainer = CoreDataDependencies.sharedContainer
         
-        sharedContainer.register(GetJSONDataUseCase.self) { _ in
-            GetJSONDataUseCaseImpl()
-        }
-        
         sharedContainer.register(GetURLDataUseCase.self) { _ in
             GetURLDataUseCaseImpl()
         }

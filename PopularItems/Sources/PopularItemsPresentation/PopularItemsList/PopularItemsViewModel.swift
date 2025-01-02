@@ -3,7 +3,6 @@ import SwiftUI
 
 @MainActor
 class PopularItemsViewModel: ObservableObject {
-    @Published var errorMessage: String = ""
     @Published var popularItems: [PopularItem] = []
     
     init() {
@@ -19,7 +18,7 @@ class PopularItemsViewModel: ObservableObject {
             let response = try await getPopularItemsUseCase.invoke()
             popularItems = response.popular
         } catch {
-            errorMessage = "Failed to load data: \(error.localizedDescription)"
+            print("Failed to load data: \(error.localizedDescription)")
         }
     }
 }

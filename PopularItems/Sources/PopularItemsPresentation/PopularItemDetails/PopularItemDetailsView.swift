@@ -1,10 +1,3 @@
-//
-//  SwiftUIView.swift
-//  PopularItems
-//
-//  Created by Jeffrey Santana on 1/2/25.
-//
-
 import SwiftUI
 
 struct PopularItemDetailsView: View {
