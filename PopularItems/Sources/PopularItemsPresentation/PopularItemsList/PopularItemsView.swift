@@ -1,3 +1,4 @@
+import PopularItemsDomain
 import SwiftUI
 
 public struct PopularItemsView: View {
@@ -13,13 +14,22 @@ public struct PopularItemsView: View {
     }
     
     public var body: some View {
-        ScrollView {
-            LazyVGrid(columns: columns) {
-                ForEach(viewModel.popularItems) { item in
-                    ItemListView(item: item)
+        NavigationStack {
+            ScrollView {
+                LazyVGrid(columns: columns) {
+                    ForEach(viewModel.popularItems) { item in
+                        NavigationLink(value: item) {
+                            ItemListView(item: item)
+                        }
+                        .buttonStyle(.plain)
+                    }
                 }
+                .padding()
             }
-            .padding()
+            .navigationDestination(for: PopularItem.self) { item in
+                PopularItemDetailsView()
+            }
+            .navigationTitle("Popular Items")
         }
     }
 }
