@@ -11,6 +11,6 @@ struct GetPopularItemsUseCaseImpl: GetPopularItemsUseCase {
     }
     
     func invoke() -> Result<[PopularItem], Error> {
-        getJSONDataUseCase.invoke(from: "PopularItems")
+        getJSONDataUseCase.invoke(from: "PopularItemsJSON")
     }
 }
