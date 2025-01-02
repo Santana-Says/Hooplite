@@ -30,6 +30,9 @@ public struct PopularItemsView: View {
                 PopularItemDetailsView()
             }
             .navigationTitle("Popular Items")
+            .task {
+                await viewModel.getPopularItems()
+            }
         }
     }
 }

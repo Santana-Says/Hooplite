@@ -1,28 +1,25 @@
 import PopularItemsDomain
 import SwiftUI
 
+@MainActor
 class PopularItemsViewModel: ObservableObject {
     @Published var popularItems: [PopularItem] = []
-    private var getPopularItemsUseCase: GetPopularItemsUseCase?
+    @Published var errorMessage: String = ""
     
     init() {
-        getPopularItems()
+        
     }
     
-    private func getPopularItems() {
+    func getPopularItems() async {
         guard let getPopularItemsUseCase = PopularItemsPresentationDependencies.sharedContainer.resolve(GetPopularItemsUseCase.self) else {
             return
         }
         
-        let result = getPopularItemsUseCase.invoke()
-        
-        switch result {
-            case .success(let popularItems):
-                self.popularItems = popularItems
-            case .failure(let error):
-                // TODO: create error message
-                print(error)
-                break
+        do {
+            let response = try await getPopularItemsUseCase.invoke()
+            popularItems = response.popular
+        } catch {
+            errorMessage = "Failed to load data: \(error.localizedDescription)"
         }
     }
 }

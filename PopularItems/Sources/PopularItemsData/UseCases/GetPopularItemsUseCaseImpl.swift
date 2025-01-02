@@ -3,14 +3,14 @@ import Foundation
 import PopularItemsDomain
 
 struct GetPopularItemsUseCaseImpl: GetPopularItemsUseCase {
-    let getJSONDataUseCase: GetJSONDataUseCase
+    let getURLDataUseCase: GetURLDataUseCase
     
     
-    init(getJSONDataUseCase: GetJSONDataUseCase) {
-        self.getJSONDataUseCase = getJSONDataUseCase
+    init(getURLDataUseCase: GetURLDataUseCase) {
+        self.getURLDataUseCase = getURLDataUseCase
     }
     
-    func invoke() -> Result<[PopularItem], Error> {
-        getJSONDataUseCase.invoke(from: "PopularItemsJSON")
+    func invoke() async throws -> PopularItemsResponse {
+        try await getURLDataUseCase.invoke(urlString: "https://midwest-tape.github.io/iOS-coding-challenge/popular.json")
     }
 }

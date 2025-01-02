@@ -15,8 +15,8 @@ public class PopularItemsDataDependencies {
         let sharedContainer = PopularItemsDataDependencies.sharedContainer
         
         sharedContainer.register(GetPopularItemsUseCase.self) { resolver in
-            let getJSONDataUseCase = resolver.resolve(GetJSONDataUseCase.self)!
-            return GetPopularItemsUseCaseImpl(getJSONDataUseCase: getJSONDataUseCase)
+            let getURLDataUseCase = resolver.resolve(GetURLDataUseCase.self)!
+            return GetPopularItemsUseCaseImpl(getURLDataUseCase: getURLDataUseCase)
         }
         
         sharedContainer.register(GetPopularItemDetailsUseCase.self) { resolver in
