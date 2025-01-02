@@ -1,4 +1,4 @@
-public struct PopularItem: Decodable {
+public struct PopularItem: Decodable, Identifiable {
     public let author: String
     public let contentType: String
     public let id: Int
