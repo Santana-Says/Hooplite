@@ -2,6 +2,7 @@ import SwiftUI
 
 struct PopularItemDetailsView: View {
     @StateObject private var viewModel = PopularItemDetailsViewModel()
+    @State private var isAlertShown: Bool = false
     
     let itemId: Int
     
@@ -43,12 +44,29 @@ struct PopularItemDetailsView: View {
                             .bold()
                         Text(itemDetails.synopsis)
                     }
+                    
+                    HStack {
+                        Spacer()
+                        Button {
+                            isAlertShown = true
+                        } label: {
+                            HStack {
+                                Image(systemName: "play.fill")
+                                Text("Watch Now")
+                            }
+                        }
+                        .buttonStyle(.borderedProminent)
+                        Spacer()
+                    }
                 }
                 .padding(.horizontal)
             }
         }
         .task {
             await viewModel.getPopularItemDetails(itemId: itemId)
+        }
+        .alert("Start watching \(viewModel.itemDetails?.title ?? "media")", isPresented: $isAlertShown) {
+            
         }
     }
     
