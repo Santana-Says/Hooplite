@@ -16,5 +16,9 @@ public class CoreDataDependencies {
         sharedContainer.register(GetJSONDataUseCase.self) { _ in
             GetJSONDataUseCaseImpl()
         }
+        
+        sharedContainer.register(GetURLDataUseCase.self) { _ in
+            GetURLDataUseCaseImpl()
+        }
     }
 }
