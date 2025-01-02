@@ -27,7 +27,7 @@ public struct PopularItemsView: View {
                 .padding()
             }
             .navigationDestination(for: PopularItem.self) { item in
-                PopularItemDetailsView()
+                PopularItemDetailsView(itemId: item.id)
             }
             .navigationTitle("Popular Items")
             .task {

@@ -3,8 +3,8 @@ import SwiftUI
 
 @MainActor
 class PopularItemsViewModel: ObservableObject {
-    @Published var popularItems: [PopularItem] = []
     @Published var errorMessage: String = ""
+    @Published var popularItems: [PopularItem] = []
     
     init() {
         

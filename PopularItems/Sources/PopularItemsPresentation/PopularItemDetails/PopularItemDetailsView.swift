@@ -10,9 +10,15 @@ import SwiftUI
 struct PopularItemDetailsView: View {
     @StateObject private var viewModel = PopularItemDetailsViewModel()
     
+    let itemId: Int
+    
+    init(itemId: Int) {
+        self.itemId = itemId
+    }
+    
     var body: some View {
-        if let itemDetails = viewModel.itemDetails {
-            ScrollView {
+        ScrollView {
+            if let itemDetails = viewModel.itemDetails {
                 VStack(alignment: .leading, spacing: 15) {
                     VStack {
                         Text(itemDetails.title.capitalized)
@@ -48,6 +54,9 @@ struct PopularItemDetailsView: View {
                 .padding(.horizontal)
             }
         }
+        .task {
+            await viewModel.getPopularItemDetails(itemId: itemId)
+        }
     }
     
     func createImagePlaceholder() -> some View {
@@ -58,5 +67,5 @@ struct PopularItemDetailsView: View {
 }
 
 #Preview {
-    PopularItemDetailsView()
+    PopularItemDetailsView(itemId: 0)
 }

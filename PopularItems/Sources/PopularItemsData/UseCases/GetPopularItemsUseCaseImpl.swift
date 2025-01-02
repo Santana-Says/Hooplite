@@ -5,7 +5,6 @@ import PopularItemsDomain
 struct GetPopularItemsUseCaseImpl: GetPopularItemsUseCase {
     let getURLDataUseCase: GetURLDataUseCase
     
-    
     init(getURLDataUseCase: GetURLDataUseCase) {
         self.getURLDataUseCase = getURLDataUseCase
     }

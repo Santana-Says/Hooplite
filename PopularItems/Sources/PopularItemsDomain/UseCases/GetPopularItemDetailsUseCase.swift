@@ -1,5 +1,5 @@
 import Foundation
 
 public protocol GetPopularItemDetailsUseCase {
-    func invoke() -> Result<PopularItemDetails, Error>
+    func invoke(itemId: Int) async throws -> PopularItemDetailsResponse
 }
