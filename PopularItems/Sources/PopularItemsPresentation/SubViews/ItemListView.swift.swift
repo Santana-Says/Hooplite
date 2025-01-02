@@ -16,22 +16,32 @@ struct ItemListView: View {
     }
     
     var body: some View {
-        VStack {
-            Image(systemName: "movieclapper.fill")
-                .resizable()
-                .scaledToFit()
-            
-            HStack {
-                Image(systemName: "video.fill")
-                Text(item.contentType.capitalized)
+        VStack(alignment: .leading) {
+            VStack {
+                AsyncImage(url: URL(string: item.imageUrl)) { image in
+                    image.resizable()
+                } placeholder: {
+                    Image(systemName: "movieclapper.fill")
+                        .resizable()
+                        .scaledToFit()
+                }
             }
             
-            Text(item.title.capitalized)
-                .font(.title2)
-                .bold()
-                .lineLimit(2, reservesSpace: true)
-            Text(item.author)
+            Group {
+                HStack {
+                    Image(systemName: "video.fill")
+                    Text(item.contentType.capitalized)
+                }
+                
+                Text(item.title.capitalized)
+                    .font(.title3)
+                    .bold()
+                    .lineLimit(2, reservesSpace: true)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Text(item.author)
+            }.padding(.horizontal)
         }
+        .frame(maxHeight: 200)
     }
 }
 
